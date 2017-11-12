@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
+});
+
+
+Route::get('/testi', function(){
+  return response()->json("ad",200);
 });
