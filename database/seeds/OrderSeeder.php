@@ -11,6 +11,8 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-      factory(App\Order::class, 5)->create();
+      factory(App\Order::class, 5)->create()->each(function ($o) {
+        $o->products()->save(factory(App\Product::class)->make());
+    });
     }
 }

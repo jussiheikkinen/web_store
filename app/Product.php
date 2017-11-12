@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     //
-    public function Orders(){
+    public function orders(){
       return $this->belongsToMany('App\Order');
     }
 }
