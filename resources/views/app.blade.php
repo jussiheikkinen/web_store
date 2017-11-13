@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>App Name - @yield('title')</title>
+        <title>Chili store - @yield('title')</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
       </header>
 
       <div class="row expanded">
-        <div class="small-12 medium-2 columns">
+        <div class="small-12 medium-3 large-2 columns">
           @section('sidebar')
             @include('menu')
           @show

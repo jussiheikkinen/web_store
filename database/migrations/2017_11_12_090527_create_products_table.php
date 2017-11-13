@@ -19,8 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->float('price');
             $table->string('manufacturer');
-            $table->integer('category');
-            $table->integer('subcategory');
+            $table->integer('category_id');
+            //$table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

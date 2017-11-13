@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('/app', function(){
   return view('app');
 });
+
+Route::get('/category/{category_id}', 'CategoryController@show');

@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Category;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +23,15 @@ class AppServiceProvider extends ServiceProvider
         *For those running MariaDB or older versions of MySQL you may hit this error when trying to run migrations:
         */
         Schema::defaultStringLength(191);
+
+        //Share gategories to menu
+        try {
+          $categories = Category::all();
+          View::share('categories', $categories);
+        } catch (Exception $e) {
+          View::share('categories', []);
+        }
+
     }
 
     /**
