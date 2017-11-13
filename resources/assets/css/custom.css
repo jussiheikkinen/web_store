@@ -1,0 +1,13 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

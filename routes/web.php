@@ -16,6 +16,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/testi', function(){
-  return response()->json("ad",200);
+Route::get('/app', function(){
+  return view('app');
 });
