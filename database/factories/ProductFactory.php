@@ -8,5 +8,7 @@ $factory->define(App\Product::class, function (Faker $faker) {
       'description'=>'product_'.str_random(100),
       'price'=>rand(10,100),
       'manufacturer'=>str_random(30).'_inc',
+      'category'=>rand(1,5),
+      'subcategory'=>rand(1,10)
       ];
 });
