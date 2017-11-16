@@ -10,17 +10,22 @@
         <link rel="stylesheet" href="{{ mix('/css/custom.css') }}">
     </head>
     <body>
+    <div data-transition="overlap" class="off-canvas-absolute position-left reveal-for-medium" id="offCanvasLeft" data-off-canvas>
+      <!-- Menu -->
+      @section('sidebar')
+        @include('menu')
+      @show
+
+    </div>
+
+    <div class="off-canvas-content" data-off-canvas-content>
+      <!-- Your page content lives here -->
       <header>
         @include('header')
       </header>
 
       <div class="row expanded">
-        <div class="small-12 medium-3 large-2 columns">
-          @section('sidebar')
-            @include('menu')
-          @show
-        </div>
-        <div class="columns">
+        <div class="small-12 columns">
           <div class="container">
               @yield('content')
           </div>
@@ -30,9 +35,10 @@
       <footer>
         @include('footer')
       </footer>
+    </div>
 
-      <!--does not work with mix-->
-      <script src="/js/app.js"></script>
-      <script> $(document).foundation();</script>
-    </body>
+    <!--does not work with mix-->
+    <script src="/js/app.js"></script>
+    <script> $(document).foundation();</script>
+  </body>
 </html>
