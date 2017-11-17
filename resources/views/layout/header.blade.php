@@ -6,9 +6,15 @@
 <div id="top_menu" class="top-bar">
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Chili store</li>
-      <li><a href="{{ url('/about') }}">About</a></li>
-      <li><a href="{{ url('/shipping') }}"> Shipping</a></li>
+      <li class="menu-text">Hello! {{ Auth::user()->name }}</li>
+      <!-- Authentication Links -->
+      @guest
+          <li><a href="{{ route('login') }}">Login</a></li>
+          <li><a href="{{ route('register') }}">Register</a></li>
+      @else
+      {{-- show something  --}}
+          <li id="logout"><a>Logout</a></li>
+      @endguest
     </ul>
   </div>
   <div class="top-bar-right">

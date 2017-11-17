@@ -11,28 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-  return view('welcome');
-});
-
-Route::get('/app', function(){
-  return view('app');
-});
+Route::get('/', function(){
+  return view('layout.app');
+}); //->middleware('auth');
 
 Route::get('/about', function(){
-  return view('app');
+  return view('layout.app');
 });
 
 Route::get('/shipping', function(){
-  return view('app');
+  return view('layout.app');
 });
 
 Route::get('/cart', function(){
-  return view('app');
+  return view('layout.app');
 });
 
-Route::get('/search', function(){
-  return view('app');
-});
+Route::get('/search/{param}', 'SearchController@searchProducts');
 
 Route::get('/category/{category_id}', 'CategoryController@show');
+
+Auth::routes();

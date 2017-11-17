@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
         try {
           $categories = Category::all();
           View::share('categories', $categories);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
           View::share('categories', []);
         }
 
