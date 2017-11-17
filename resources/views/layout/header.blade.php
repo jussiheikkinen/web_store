@@ -12,7 +12,7 @@
           <li><a href="{{ route('login') }}">Login</a></li>
           <li><a href="{{ route('register') }}">Register</a></li>
       @else
-      {{-- show something  --}}
+          {{-- show something  --}}
           <li id="logout"><a>Logout</a></li>
       @endguest
     </ul>
