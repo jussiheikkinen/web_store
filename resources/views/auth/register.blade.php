@@ -3,7 +3,6 @@
 @section('content')
   <form method="POST" action="{{ route('register') }}">
   {{ csrf_field() }}
-
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
         <div class="medium-12 cell">
@@ -29,6 +28,7 @@
         <div class="medium-12 cell">
           <input type="submit" class="button" value="Submit">
         </div>
+      </div>
     </div>
   </form>
 @endsection

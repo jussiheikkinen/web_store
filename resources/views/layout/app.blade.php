@@ -14,7 +14,7 @@
     <div data-transition="overlap" class="off-canvas-absolute position-left reveal-for-medium" id="offCanvasLeft" data-off-canvas>
       <!-- Menu -->
       @section('sidebar')
-        @include('menu')
+        @include('layout.menu')
       @show
 
     </div>
@@ -22,7 +22,7 @@
     <div id="app" class="off-canvas-content" data-off-canvas-content>
       <!-- Your page content lives here -->
       <header>
-        @include('header')
+        @include('layout.header')
       </header>
 
       <div class="row expanded">
@@ -34,7 +34,7 @@
       </div>
 
       <footer>
-        @include('footer')
+        @include('layout.footer')
       </footer>
     </div>
 
@@ -42,5 +42,25 @@
     <script src="/js/app.js"></script>
     <script src="/js/foundation.js"></script>
     <script> $(document).foundation();</script>
+    <script>
+
+    //logout
+    function logout(){
+      axios.post('/logout')
+        .then(function (response) {
+          console.log('logged out');
+          window.location = "{{ route('home') }}";
+        })
+        .catch(function (error) {
+          window.alert(error);
+        });
+    }
+
+    //Search product
+    function search(){
+      console.log('searching');
+    }
+
+    </script>
   </body>
 </html>

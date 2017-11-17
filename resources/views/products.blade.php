@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layout.app')
 @section('content')
 
 <div class="row" style="margin-top:10px;">

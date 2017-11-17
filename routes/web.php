@@ -13,7 +13,7 @@
 
 Route::get('/', function(){
   return view('layout.app');
-}); //->middleware('auth');
+})->name('home'); //->middleware('auth');
 
 Route::get('/about', function(){
   return view('layout.app');

@@ -17,16 +17,17 @@
         </div>
         <div class="medium-6 cell">
           <input type="submit" class="button" value="Login">
+          <label>
+            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+            Remember Me
+          </label>
         </div>
         <div class="medium-6 cell">
         <a class="btn btn-link" href="{{ route('password.request') }}">
             Forgot Your Password?
         </a>
+        </div>
       </div>
-      <label>
-        Remember Me
-        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-      </label>
     </div>
   </form>
 
