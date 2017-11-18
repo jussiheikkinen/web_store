@@ -27,9 +27,9 @@ class AppServiceProvider extends ServiceProvider
         //Share gategories to menu
         try {
           $categories = Category::all();
-          View::share('categories', $categories);
+          View::share(['categories'=>$categories, 'title'=>'Laravel']);
         } catch (\Exception $e) {
-          View::share('categories', []);
+          View::share(['categories'=>[], 'title'=>'Laravel']);
         }
 
     }

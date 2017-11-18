@@ -29,15 +29,23 @@
       <!-- Authentication Links -->
       @guest
           <li><a href="{{ route('login') }}">Login</a></li>
-          <!-- Open in new page or modal -->
-          {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
+          <li><a href="{{ route('register') }}">Register</a></li>
       @else
-          {{-- show something  --}}
-          <li class="menu-text">Hello! {{ Auth::user()->name }}</li>
-          <!-- Open in new page or modal -->
-          {{--<li id="logout" onclick="logout()" ><a>Logout</a></li>--}}
+          <li data-toggle="user-dropdown-bottom-right" class="menu-text">Hello! {{ Auth::user()->name }}</li>
+          <!-- Open in popover -->
+          <div id="user-dropdown-bottom-right" class="dropdown-pane" data-position="bottom" data-alignment="right" data-hover="true" data-hover-pane="true" data-dropdown data-auto-focus="true">
+            <div class="secondary button-group stacked-for-small">
+              <a type="" class="button" id="logout" onclick="logout()">Logout</a>
+              <a type="" class="button" id="logout" onclick="">My settings</a>
+            </div>
+          </div>
       @endguest
-      <li><button type="button" class="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button></li>
+      <li>
+        <button data-toggle="cart-dropdown-bottom-right" type="button" class="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+        <div id="cart-dropdown-bottom-right" class="dropdown-pane" data-position="bottom" data-alignment="right" data-hover="true" data-hover-pane="true" data-dropdown data-auto-focus="true">
+          <!-- Show total sum and products -->
+        </div>
+      </li>
     </ul>
   </div>
 </div>

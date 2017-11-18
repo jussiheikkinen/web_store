@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function(){
-  return view('layout.app');
+  $products = App\Product::where('category_id',1)->get();
+  return view('home', ['products'=>$products]);
 })->name('home'); //->middleware('auth');
 
 Route::get('/about', function(){
