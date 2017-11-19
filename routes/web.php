@@ -24,12 +24,14 @@ Route::get('/shipping', function(){
   return view('layout.app');
 });
 
-Route::get('/cart', function(){
-  return view('layout.app');
-});
+Route::get('/cart', 'CartController@create');
 
 Route::get('/search/{param}', 'SearchController@searchProducts');
 
 Route::get('/category/{category_id}', 'CategoryController@show');
+
+Route::get('/product/{product_id}', function(){
+  return view('layout.app');
+});
 
 Auth::routes();

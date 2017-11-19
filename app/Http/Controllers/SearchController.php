@@ -13,6 +13,6 @@ class SearchController extends Controller
       $products = Product::where('name','LIKE','%'.$param.'%')
                   ->get();
 
-      return response()->json([$products], 200);
+      return response()->json($products, 200);
     }
 }

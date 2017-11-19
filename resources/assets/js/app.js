@@ -15,8 +15,15 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+//Just keep both ways to import components for example.
+import example from './components/ExampleComponent.vue';
+//Vue.component('example-component', require('./components/ExampleComponent.vue'));
+import cart from './components/Cart.vue';
+import searchbox from './components/SearchBox.vue';
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+
+    //register componens
+    components: {example, cart, searchbox}
 });

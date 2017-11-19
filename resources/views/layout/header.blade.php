@@ -1,4 +1,4 @@
-<div class="title-bar" data-responsive-toggle="top_menu" data-hide-for="medium">
+<div class="title-bar" data-responsive-toggle="top_menu" data-hide-for="medium" style="display:none;">
   <div class="title-bar-left">
     <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
   </div>
@@ -17,10 +17,7 @@
   <div class="top-bar-left">
     <ul class="menu">
       <li>
-        <div style="margin-bottom:0;" id="search_bar" class="input-group">
-          <input class="input-group-field" placeholder="Search" type="search">
-          <button type="button" class="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-        </div>
+        <searchbox></searchbox>
       </li>
     </ul>
   </div>
@@ -44,6 +41,7 @@
         <button data-toggle="cart-dropdown-bottom-right" type="button" class="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
         <div id="cart-dropdown-bottom-right" class="dropdown-pane" data-position="bottom" data-alignment="right" data-hover="true" data-hover-pane="true" data-dropdown data-auto-focus="true">
           <!-- Show total sum and products -->
+          <cart></cart>
         </div>
       </li>
     </ul>

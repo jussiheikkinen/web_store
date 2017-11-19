@@ -56,11 +56,6 @@
         });
     }
 
-    //Search product
-    function search(){
-      console.log('searching');
-    }
-
     </script>
   </body>
 </html>
