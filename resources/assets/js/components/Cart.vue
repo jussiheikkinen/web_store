@@ -4,7 +4,7 @@
       {{total}} €
     </div>
     <div class="small-12 columns">
-      <div v-if="products.length">
+      <div v-if="total">
         <div v-for="item in products">
           {{ item.name }}
         </div>
@@ -23,7 +23,6 @@
 
     data(){
       return {
-        total: 0,
         products: []
       }
     },
@@ -36,16 +35,30 @@
       }
     },
 
+    computed: {
+      total: function(){
+        //Set total to 0 and calculate again
+        let total = 0;
+        for(let i in this.products){
+          total = parseFloat(this.products[i].price) + parseFloat(total);
+        }
+        return total;
+      }
+    },
+
     methods: {
       addToCart(newVal){
         //Put to session cart by axios:post
         this.products.push(newVal);
 
-        //Set total to 0 and calculate again
-        this.total = 0;
-        for(i in this.products){
-          this.total = parseFloat(newVal.price) + parseFloat(this.total);
-        }
+        axios.post('/cart', {
+          'products': this.products
+        }).then((response) => {
+          console.log(response)
+        })
+        .catch((error) => {
+          console.log(error)
+        });
       }
     },
 
@@ -54,7 +67,6 @@
           .then((response) => {
             console.log(response)
             this.products = response.data.products;
-            this.total = response.data.total;
           })
           .catch((error) => {
             console.log(error)

@@ -3,14 +3,10 @@
     <h5>Products</h4>
   </li>
   @foreach($categories as $gategory)
-    <li>
-      <a href="{{ url('/category/'.$gategory->id) }}">{{$gategory->name}}</a>
-      {{--
-      <ul class="menu vertical nested">
-        <li><a href="{{ url('/category/'.$gategory->id) }}">Subcategory 1</a></li>
-        <li><a href="{{ url('/category/'.$gategory->id) }}">Subcategory 2</a></li>
-      </ul>
-      --}}
+    <li class="menu-item">
+      <a href="{{ url('/category/'.$gategory->id) }}">
+        <i class="fa fa-fire" aria-hidden="true"></i> {{$gategory->name}}
+      </a>
     </li>
   @endforeach
 </ul>

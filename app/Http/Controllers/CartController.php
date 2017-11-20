@@ -15,19 +15,36 @@ class CartController extends Controller
       }
       else{
         //Create a new cart and attach it to session cookie
-        $cart = $request->session()->put('cart', [
+        $cart = [
           'user'=>false,
           'products'=>[],
-          'total'=>'0',
-          'created_at'=>Carbon::now()
-        ]);
+          'created_at'=>Carbon::now(),
+          'updated_at'=>Carbon::now()
+        ];
+
+        $cart = $request->session()->put('cart', $cart);
       }
 
       return request()->json(200, $cart);
     }
 
-    public function update($product_id){
+    public function update(Request $request){
+      $products = $request->get('products');
+      if ($request->session()->exists('cart')) {
+        $request->session()->put('cart.products', $products);
+        //return ok
+        return request()->json(200, "Added to session");
+      }
+      return request()->json(400, "No session");
+    }
 
+
+    public function delete(Request $request){
+      if ($request->session()->exists('cart')) {
+        $request->session()->forget('cart');
+      }
+
+      return redirect()->action('CartController@create');
     }
 
 }

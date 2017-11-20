@@ -25,6 +25,7 @@ Route::get('/shipping', function(){
 });
 
 Route::get('/cart', 'CartController@create');
+Route::post('/cart', 'CartController@update');
 
 Route::get('/search/{param}', 'SearchController@searchProducts');
 

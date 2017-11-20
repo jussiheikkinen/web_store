@@ -1,4 +1,4 @@
-<div class="title-bar" data-responsive-toggle="top_menu" data-hide-for="medium" style="display:none;">
+<div class="title-bar" data-responsive-toggle="top_menu" data-hide-for="medium">
   <div class="title-bar-left">
     <button class="menu-icon" type="button" data-toggle="offCanvasLeft"></button>
   </div>
@@ -9,14 +9,14 @@
     @else
         <div class="title-bar-title">Hello! {{ Auth::user()->name }}</div>
     @endguest
-    <div class="title-bar-title"><i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i></div>
+    <div class="title-bar-title"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
   </div>
 </div>
 
 <div id="top_menu" class="top-bar">
   <div class="top-bar-left">
     <ul class="menu">
-      <li>
+      <li data-show-for="medium">
         <searchbox></searchbox>
       </li>
     </ul>
