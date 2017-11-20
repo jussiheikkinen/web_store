@@ -40,7 +40,12 @@
       addToCart(newVal){
         //Put to session cart by axios:post
         this.products.push(newVal);
-        this.total = parseFloat(newVal.price) + parseFloat(this.total);
+
+        //Set total to 0 and calculate again
+        this.total = 0;
+        for(i in this.products){
+          this.total = parseFloat(newVal.price) + parseFloat(this.total);
+        }
       }
     },
 
