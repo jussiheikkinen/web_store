@@ -27,7 +27,7 @@
 
       <div class="row expanded">
         <div class="small-12 columns">
-          <div class="container" id="plaah">
+          <div class="container">
               @yield('content')
           </div>
         </div>

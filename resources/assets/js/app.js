@@ -20,10 +20,23 @@ import example from './components/ExampleComponent.vue';
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 import cart from './components/Cart.vue';
 import searchbox from './components/SearchBox.vue';
+import product_list from './components/ProductList.vue';
 
 const app = new Vue({
     el: '#app',
 
     //register componens
-    components: {example, cart, searchbox}
+    components: {
+      example, cart, searchbox, product_list
+    },
+
+    data: {
+      add_product: false
+    },
+
+    methods: {
+      addToCart(product){
+        this.add_product = product;
+      }
+    }
 });

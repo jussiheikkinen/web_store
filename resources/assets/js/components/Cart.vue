@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="small-12 columns">
-      {{total}}
+      {{total}} €
     </div>
     <div class="small-12 columns">
       <div v-if="products.length">
@@ -19,10 +19,28 @@
 
 <script>
   export default{
+    props: ["added"],
+
     data(){
       return {
         total: 0,
         products: []
+      }
+    },
+
+    watch: {
+      added: function(newVal, oldVal) { // watch it
+        if(newVal){
+          this.addToCart(newVal);
+        }
+      }
+    },
+
+    methods: {
+      addToCart(newVal){
+        //Put to session cart by axios:post
+        this.products.push(newVal);
+        this.total = parseFloat(newVal.price) + parseFloat(this.total);
       }
     },
 

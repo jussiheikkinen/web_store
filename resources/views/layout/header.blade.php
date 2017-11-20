@@ -41,7 +41,7 @@
         <button data-toggle="cart-dropdown-bottom-right" type="button" class="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
         <div id="cart-dropdown-bottom-right" class="dropdown-pane" data-position="bottom" data-alignment="right" data-hover="true" data-hover-pane="true" data-dropdown data-auto-focus="true">
           <!-- Show total sum and products -->
-          <cart></cart>
+          <cart v-bind:added="add_product"></cart>
         </div>
       </li>
     </ul>

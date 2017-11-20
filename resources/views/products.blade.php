@@ -1,8 +1,6 @@
 @extends('layout.app')
 @section('content')
 
-<div class="row" style="margin-top:10px;">
-  @each('product_card', $products, 'product')
-</div>
+<product_list v-bind:products_json="'{{$products}}'"></product_list>
 
 @endsection
