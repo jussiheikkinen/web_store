@@ -22,7 +22,7 @@ class CartController extends Controller
           'updated_at'=>Carbon::now()
         ];
 
-        $cart = $request->session()->put('cart', $cart);
+        $request->session()->put('cart', $cart);
       }
 
       return request()->json(200, $cart);
