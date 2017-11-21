@@ -6,16 +6,43 @@ body {
   height: 100%;
 }
 
-footer {
+.cart {
+  color: black;
+}
+
+#footer {
   width: 100%;
   position: fixed;
   bottom: 0;
 }
 
+.product-card:hover {
+  background-color: rgb(135,253,229);
+}
+
 .menu-item:hover {
-  background-color: lightgrey;
+  background-color: rgb(135,253,229);
 }
 
 .menu-item a {
   color: black; font-weight: 600;
+}
+
+
+
+
+/* ZURB FOUC */
+
+.no-js .top-bar {
+  display: none;
+}
+
+@media screen and (min-width: 40em) {
+  .no-js .top-bar {
+    display: block;
+  }
+
+  .no-js .title-bar {
+    display: none;
+  }
 }

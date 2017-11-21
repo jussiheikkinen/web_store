@@ -50,7 +50,7 @@
 </script>
 
 <style>
-  .search-dropdown{
+  .search-dropdown {
     position: absolute;
     background-color: white;
     top: 40px;
@@ -58,12 +58,12 @@
     border: 2px solid lightgray;
   }
 
-  .search-elem{
+  .search-elem {
     padding-top: 5px;
     padding-bottom: 5px;
   }
 
-  .search-elem:hover{
-    background-color: lightgray;
+  .search-elem:hover {
+    background-color: rgb(135,253,229);
   }
 </style>

@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html>
     <head>
         <title>Web store - {{$title}}</title>
@@ -11,39 +10,38 @@
         <link rel="stylesheet" href="{{ mix('/css/custom.css') }}">
     </head>
     <body>
-    <div data-transition="overlap" class="off-canvas-absolute position-left reveal-for-medium" id="offCanvasLeft" data-off-canvas>
-      <!-- Menu -->
-      @section('sidebar')
-        @include('layout.menu')
-      @show
 
-    </div>
-
-    <div id="app" class="off-canvas-content" data-off-canvas-content>
-      <!-- Your page content lives here -->
-      <header>
-        @include('layout.header')
-      </header>
-
-      <div class="row expanded">
-        <div class="small-12 columns">
-          <div class="container">
-              @yield('content')
-          </div>
-        </div>
+      <div data-transition="push" class="off-canvas position-left reveal-for-medium" id="offCanvasLeft" data-off-canvas>
+        <!-- Menu -->
+        @section('sidebar')
+          @include('layout.menu')
+        @show
       </div>
 
-      <footer>
-        @include('layout.footer')
-      </footer>
-    </div>
+      <div id="app" class="off-canvas-content" data-off-canvas-content>
+        <div id="header">
+          @include('layout.header')
+        </div>
+
+        <!-- Your page content lives here -->
+        <div class="row expanded">
+          <div class="small-12 columns">
+            <div class="container">
+                @yield('content')
+            </div>
+          </div>
+        </div>
+
+        <div id="footer">
+          @include('layout.footer')
+        </div>
+      </div>
 
     <!--does not work with mix-->
     <script src="/js/app.js"></script>
     <script src="/js/foundation.js"></script>
     <script> $(document).foundation();</script>
     <script>
-
     //logout
     function logout(){
       axios.post('/logout')
@@ -55,7 +53,6 @@
           window.alert(error);
         });
     }
-
     </script>
   </body>
 </html>

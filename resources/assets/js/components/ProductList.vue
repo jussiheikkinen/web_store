@@ -1,7 +1,7 @@
 <template>
   <div class="row" style="margin-top:10px;">
     <div class="small-12 medium-4 large-3 columns" v-for="product in products">
-      <div class="card">
+      <div class="card product-card">
         <img class="thumbnail" src="/chili.jpg" alt="product photo" width="100%">
         <div class="card-section">
           <div class="row">

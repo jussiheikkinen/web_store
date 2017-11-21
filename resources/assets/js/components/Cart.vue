@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row cart">
     <div class="small-12 columns">
       {{total}} €
     </div>
