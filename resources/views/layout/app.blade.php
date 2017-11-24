@@ -33,7 +33,7 @@
         </div>
 
         <div id="footer">
-          @include('layout.footer')
+          {{--@include('layout.footer')--}}
         </div>
       </div>
 

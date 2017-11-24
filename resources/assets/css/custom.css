@@ -3,7 +3,11 @@ html {
 }
 
 body {
-  height: 100%;
+  min-height: 100%;
+}
+
+.off-canvas-content{
+  min-height: 100%;
 }
 
 .cart {
@@ -17,11 +21,11 @@ body {
 }
 
 .product-card:hover {
-  background-color: rgb(135,253,229);
+  background-color: rgb(210,252,242);
 }
 
 .menu-item:hover {
-  background-color: rgb(135,253,229);
+  background-color: rgb(210,252,242);
 }
 
 .menu-item a {

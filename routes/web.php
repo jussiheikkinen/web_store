@@ -32,7 +32,7 @@ Route::get('/search/{param}', 'SearchController@searchProducts');
 Route::get('/category/{category_id}', 'CategoryController@show');
 
 Route::get('/product/{product_id}', function(){
-  return view('layout.app');
+  return view('product');
 });
 
 Auth::routes();

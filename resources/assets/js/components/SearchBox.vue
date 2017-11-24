@@ -64,6 +64,6 @@
   }
 
   .search-elem:hover {
-    background-color: rgb(135,253,229);
+    background-color: rgb(210,252,242);
   }
 </style>
