@@ -21,13 +21,14 @@ import example from './components/ExampleComponent.vue';
 import cart from './components/Cart.vue';
 import searchbox from './components/SearchBox.vue';
 import product_list from './components/ProductList.vue';
+import product from './components/Product.vue';
 
 const app = new Vue({
     el: '#app',
 
     //register componens
     components: {
-      example, cart, searchbox, product_list
+      example, cart, searchbox, product_list, product
     },
 
     data: {

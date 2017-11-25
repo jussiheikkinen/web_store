@@ -13,7 +13,7 @@
 
 Route::get('/', function(){
   $products = App\Product::where('category_id',1)->get();
-  return view('home', ['products'=>$products]);
+  return view('home', ['products'=>json_encode($products)]);
 })->name('home'); //->middleware('auth');
 
 Route::get('/about', function(){
@@ -31,8 +31,9 @@ Route::get('/search/{param}', 'SearchController@searchProducts');
 
 Route::get('/category/{category_id}', 'CategoryController@show');
 
-Route::get('/product/{product_id}', function(){
-  return view('product');
+Route::get('/product/{product_id}', function($product_id){
+  $product = App\Product::find($product_id);
+  return view('product', ['product'=>json_encode($product)]);
 });
 
 Auth::routes();
