@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Category;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Log;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
           $categories = Category::all();
           View::share(['categories'=>$categories, 'title'=>'Laravel']);
         } catch (\Exception $e) {
+          Log::debug($e);
           View::share(['categories'=>[], 'title'=>'Laravel']);
         }
 
